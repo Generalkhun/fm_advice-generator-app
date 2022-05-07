@@ -17,7 +17,10 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <div>
+    <div className='bg-dark-blue h-screen'>
+      {/* <QouteBox
+      
+      /> */}
       <button onClick={fetchAdviceData}>fetch new advice</button>
 
       <div>{`current advice id: ${adviceId}`}</div>
