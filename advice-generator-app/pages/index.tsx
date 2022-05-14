@@ -17,16 +17,12 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <div className='bg-dark-blue h-screen'>
-      {/* <QouteBox
-      
-      /> */}
-      <button onClick={fetchAdviceData}>fetch new advice</button>
-
-      <div>{`current advice id: ${adviceId}`}</div>
-      <div>{`current advice message: ${adviceMessage}`}</div>
-
-
+    <div className='bg-dark-blue h-screen flex'>
+      <div className='content-center p-20 m-24 bg-grayish-blue rounded-lg'>
+        <div>{`Advice # ${adviceId}`}</div>
+        <div>{`"${adviceMessage}"`}</div>
+        <button className='bg-neon-green rounded-full flex items-center justify-center hover:backdrop-blur-md' style={{height: '100px', width: '100px'}} onClick={fetchAdviceData}>a</button>
+      </div>
     </div>
   )
 }
