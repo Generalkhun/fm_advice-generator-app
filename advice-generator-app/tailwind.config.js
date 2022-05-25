@@ -4,6 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    // fontFamily: {
+    //   'sans': ['Manrope'],
+    // },
     extend: {
       colors: {
         'grayish-blue': 'hsl(217, 19%, 38%)',
