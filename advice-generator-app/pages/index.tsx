@@ -17,9 +17,9 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <div className='bg-dark-blue h-screen flex'>
-      <div className='content-center p-20 m-24 bg-grayish-blue rounded-lg'>
-        <div>{`Advice # ${adviceId}`}</div>
+    <div className='bg-dark-blue h-screen flex justify-center items-center'>
+      <div className='h-[330px] w-[540px] content-center bg-dark-grayish-blue rounded-lg'>
+        <p className='font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
         <div>{`"${adviceMessage}"`}</div>
         <button className='bg-neon-green rounded-full flex items-center justify-center hover:backdrop-blur-md' style={{height: '100px', width: '100px'}} onClick={fetchAdviceData}>a</button>
       </div>
