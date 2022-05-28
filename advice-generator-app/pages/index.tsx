@@ -27,8 +27,9 @@ const Home: NextPage = () => {
 
   /**
    * @todo
-   * 1. conditionally render pattern divider based on screen width
-   * 2. adjust color based on the sample design (not a guided one)
+   * 1. conditionally render pattern divider and box width (sm:w-[540px]) based on screen width
+   * 2. adjust fonts 
+   * 3. add dice animation
    */
 
   return (
