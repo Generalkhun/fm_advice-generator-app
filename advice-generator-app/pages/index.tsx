@@ -16,13 +16,23 @@ const Home: NextPage = () => {
     setAdviceMessage(adviceData.data.advice)
   }, [])
 
+  /**
+   * @todo
+   * 1. conditionally render pattern divider based on screen width
+   * 2. adjust color based on the sample design (not a guided one)
+   */
+
   return (
     <div className='bg-dark-blue h-screen flex justify-center items-center'>
-      <div className='h-[330px] w-[540px] content-center bg-dark-grayish-blue rounded-lg'>
-        <p className='font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
-        <div>{`"${adviceMessage}"`}</div>
-        <button className='bg-neon-green rounded-full flex items-center justify-center hover:backdrop-blur-md' style={{height: '100px', width: '100px'}} onClick={fetchAdviceData}>a</button>
+      <div className='h-[330px] w-[540px] bg-dark-grayish-blue rounded-lg flex flex-col items-center'>
+        <p className='mt-12 pb-8 font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
+        <div className='h-[147px]  text-light-cyan'>{`"${adviceMessage}"`}</div>
+        <img className='pb-9' src='/pattern-divider-desktop.svg' />
+        <div className='h-px'>
+          <button className='bg-neon-green rounded-full flex items-center justify-center hover:backdrop-blur-md' style={{ height: '63px', width: '63px' }} onClick={fetchAdviceData}>a</button>
+        </div>
       </div>
+
     </div>
   )
 }
