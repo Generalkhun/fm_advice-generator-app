@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     <div className='bg-dark-blue h-screen flex justify-center items-center'>
       <div className='h-[330px] w-[540px] bg-dark-grayish-blue rounded-lg flex flex-col items-center'>
         <p className='mt-12 pb-8 font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
-        <div className='h-[147px] px-13 text-light-cyan'>{`"${adviceMessage}"`}</div>
+        <div className='h-[147px] px-14 text-light-cyan'>{`"${adviceMessage}"`}</div>
         <img className='pb-9' src='/pattern-divider-desktop.svg' />
         <div className='relative h-px'>
           {isGetAdviceBtnHovered && <div className='absolute h-[63px] w-[63px] bg-neon-green rounded-full blur-lg'></div>}
