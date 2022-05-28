@@ -7,6 +7,7 @@ import { AdviceServiceAPIRespose } from './api/advice'
 const Home: NextPage = () => {
   const [adviceMessage, setAdviceMessage] = useState<string>('')
   const [adviceId, setAdviceId] = useState<string>('')
+  const [isGetAdviceBtnHovered, setIsGetAdviceBtnHovered] = useState<boolean>(false)
   const fetchAdviceData = useCallback(async () => {
     const adviceData: AxiosResponse<AdviceServiceAPIRespose> = await axios({
       url: endpointsForFrontend.adviceAPIEndpoints,
@@ -15,14 +16,36 @@ const Home: NextPage = () => {
     setAdviceId(adviceData.data.id)
     setAdviceMessage(adviceData.data.advice)
   }, [])
+  
+  const onHoverBtn = () => {
+    setIsGetAdviceBtnHovered(true);
+  }
+
+  const onUnHoverBtn = () => {
+    setIsGetAdviceBtnHovered(false);
+  }
+
+  /**
+   * @todo
+   * 1. conditionally render pattern divider and box width (sm:w-[540px]) based on screen width
+   * 2. adjust fonts 
+   * 3. add dice animation
+   */
 
   return (
     <div className='bg-dark-blue h-screen flex justify-center items-center'>
-      <div className='h-[330px] w-[540px] content-center bg-dark-grayish-blue rounded-lg'>
-        <p className='font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
-        <div>{`"${adviceMessage}"`}</div>
-        <button className='bg-neon-green rounded-full flex items-center justify-center hover:backdrop-blur-md' style={{height: '100px', width: '100px'}} onClick={fetchAdviceData}>a</button>
+      <div className='h-[330px] w-[540px] bg-dark-grayish-blue rounded-lg flex flex-col items-center'>
+        <p className='mt-12 pb-8 font-sans font-extrabold text-neon-green'>{`ADVICE #${adviceId}`}</p>
+        <div className='h-[147px] px-14 text-light-cyan'>{`"${adviceMessage}"`}</div>
+        <img className='pb-9' src='/pattern-divider-desktop.svg' />
+        <div className='relative h-px'>
+          {isGetAdviceBtnHovered && <div className='absolute h-[63px] w-[63px] bg-neon-green rounded-full blur-lg'></div>}
+          <button onMouseEnter={onHoverBtn} onMouseLeave={onUnHoverBtn} className='relative h-[63px] w-[63px] bg-neon-green rounded-full flex items-center justify-center' onClick={fetchAdviceData}>
+            <img src='/icon-dice.svg' />
+          </button>
+        </div>
       </div>
+
     </div>
   )
 }
