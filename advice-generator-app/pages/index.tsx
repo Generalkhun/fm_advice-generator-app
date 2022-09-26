@@ -4,7 +4,6 @@ import { useCallback, useState } from 'react'
 import { SkeletonLoadingAdvice } from '../components/SkeletonLoadingAdvice'
 import { endpointsForFrontend } from '../config'
 import { AdviceServiceAPIRespose } from './api/advice'
-import Image from 'next/image'
 
 const Home: NextPage = () => {
   const [adviceMessage, setAdviceMessage] = useState<string>('')
@@ -47,12 +46,12 @@ const Home: NextPage = () => {
             {isShowErrorLoadingMessage ? <p className="mt-10 pb-5 font-['Manrope, sans-serif'] font-[700] text-[13px] tracking-[.3em] text-[crimson]">Something went down, please load an advice again</p> :
               <><p className="mt-10 pb-5 font-['Manrope, sans-serif'] font-[700] text-[13px] tracking-[.3em] text-neon-green">{`ADVICE #${adviceId}`}</p>
                 <div className="min-h-[147px] px-14 font-['Manrope, sans-serif'] text-center font-[600] text-[26px] tracking-[.03em] text-light-cyan">{`"${adviceMessage}"`}</div>
-                <Image className='pb-14' src='/pattern-divider-desktop.svg' />
+                <img className='pb-14' src='/pattern-divider-desktop.svg' />
               </>}
             <div className='absolute bottom-[167px]'>
               {isGetAdviceBtnHovered && <div className='absolute h-[63px] w-[63px] bg-neon-green rounded-full blur-lg'></div>}
               <button onMouseEnter={onHoverBtn} onMouseLeave={onUnHoverBtn} className='relative h-[63px] w-[63px] bg-neon-green rounded-full flex items-center justify-center' onClick={fetchAdviceData}>
-                <Image src='/icon-dice.svg' />
+                <img src='/icon-dice.svg' />
               </button>
             </div>
           </>
