@@ -48,7 +48,7 @@ const Home: NextPage = () => {
                 <div className="min-h-[147px] px-14 font-['Manrope, sans-serif'] text-center font-[600] text-[26px] tracking-[.03em] text-light-cyan">{`"${adviceMessage}"`}</div>
                 <img className='pb-14' src='/pattern-divider-desktop.svg' />
               </>}
-            <div className='absolute bottom-[167px]'>
+            <div className='relative top-[30px]'>
               {isGetAdviceBtnHovered && <div className='absolute h-[63px] w-[63px] bg-neon-green rounded-full blur-lg'></div>}
               <button onMouseEnter={onHoverBtn} onMouseLeave={onUnHoverBtn} className='relative h-[63px] w-[63px] bg-neon-green rounded-full flex items-center justify-center' onClick={fetchAdviceData}>
                 <img src='/icon-dice.svg' />
